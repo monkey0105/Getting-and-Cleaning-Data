@@ -41,10 +41,10 @@ write.table(tidy_data, "tidy_data.txt", row.name = FALSE)
 
 # creats 2nd tidy_data with average of each variable for 
 # each activity and each subject
-tidy_data_3 <- tidy_data %>% 
-                group_by(activity, subject) %>% 
-                summarise_each(funs(mean))
+tidy_data_mean <- tidy_data %>% 
+                  group_by(activity, subject) %>% 
+                  summarise_each(funs(mean))
 
-write.table(tidy_data_2, "tidy_data_2.txt", row.name= FALSE)
+write.table(tidy_data_mean, "tidy_data_mean.txt", row.name= FALSE)
 
 # end
